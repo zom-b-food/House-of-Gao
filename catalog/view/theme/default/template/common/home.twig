@@ -1,0 +1,149 @@
+{{ header }}
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<!-- Rotator -->
+<script src="/image/catalog/_sliders/tms-0.3.js" type="text/javascript"></script>
+<script src="/image/catalog/_sliders/tms_presets.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/image/catalog/_sliders/rotator.css">
+<div id="common-home" class="container">
+    <h1>Huānyíng to the House of Gao</h1>
+
+    <div class="row intro-promise">
+        <div class="col-md-4">
+
+                <div id="contact-supplier" onclick="window.location.href='index.php?route=information/contact'">
+                   &nbsp;
+                </div>
+
+        </div>
+        <div class="col-md-8 norightpad">
+            <div class="main padslider">
+                <div class="col_slider">
+                    <div class="slider">
+                        <!-- change message to ADAP from AIDS -->
+                        <ul class="items">
+                            <li>
+                                <img src="/image/catalog/_sliders/slider4.jpg"
+                                     class="img-responsive myslider"
+                                     alt="">
+
+                                <div class="banner">
+                                    <div class="banner-copy">
+                                        <h1>BIG SALE</h1>
+                                        <h5 style="padding-left:30px;">Our Mission:</h5>
+                                        <ul class="rotator">
+                                            <li>To address health issues that improve the lives of the underserved
+                                                through
+                                                collaboration, outreach and education.
+                                            </li>
+                                            <li>To make a significant difference in education and information about
+                                                lorum ipsum.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/image/catalog/_sliders/slider1.jpg"
+                                     class="img-responsive myslider"
+                                     alt="">
+
+                                <div class="banner">
+                                    <div class="banner-copy">
+                                        <h1>See Our Specials</h1>
+                                        <ul class="rotator">
+                                            <li>To make a significant difference in education and information about
+                                                lorum ipsum.
+                                            </li>
+                                        </ul>
+                                        <p>To address health issues that improve the lives of the underserved
+                                            through
+                                            collaboration, outreach and education.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/image/catalog/_sliders/slider2.jpg"
+                                     class="img-responsive myslider"
+                                     alt="">
+
+                                <div class="banner">
+                                    <div class="banner-copy">
+                                        <h1>Welcome to our House</h1>
+
+                                        <h2>Lorum Ipsem...</h2>
+                                        <ul class="rotator">
+                                            <li>To address health issues that improve the lives of the underserved
+                                                through
+                                                collaboration, outreach and education.
+                                            </li>
+                                        </ul>
+                                        <p>Check out our featured items.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/image/catalog/_sliders/slider3.jpg"
+                                     class="img-responsive myslider"
+                                     alt="">
+
+                                <div class="banner">
+                                    <div class="banner-copy">
+                                        <h1>NOW OPEN</h1>
+
+                                        <p>To address health issues that improve the lives of the underserved
+                                            through
+                                            collaboration, outreach and education.
+                                        </p>
+
+                                        <p>To make a significant difference in education and information about lorum
+                                            ipsum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">{{ column_left }}
+        {% if column_left and column_right %}
+            {% set class = 'col-sm-6' %}
+        {% elseif column_left or column_right %}
+            {% set class = 'col-sm-9' %}
+        {% else %}
+            {% set class = 'col-sm-12' %}
+        {% endif %}
+        <div id="content" class="{{ class }}">{{ content_top }}{{ content_bottom }}</div>
+        {{ column_right }}
+    </div>
+</div>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('.slider')._TMS({
+            prevBu: '.prev',
+            nextBu: '.next',
+            playBu: '.play',
+            duration: 1000,
+            easing: '',
+            preset: 'simpleFade',
+            pagination: true, //'.pagination',true,'<ul></ul>'
+            pagNums: false,
+            slideshow: 4000,
+            numStatus: false,
+            banners: true,
+            bannerShow: function (banner) {
+                banner
+                        .hide()
+                        .fadeIn(800)
+            },
+            bannerHide: function (banner) {
+                banner
+                        .show()
+                        .fadeOut(800)
+            }
+        })
+    })
+</script>
+{{ footer }}
